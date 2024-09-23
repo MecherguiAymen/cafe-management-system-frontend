@@ -90,7 +90,7 @@ export class SignupComponent implements OnInit {
       this.router.navigate(['/']);
     }, (error) => {
       this.ngxService.stop();
-      this.modalService.close();
+     // this.modalService.close();
 
       error.error?.message ? this.responseMessage = error.error?.message : this.responseMessage = GlobalConstants.genericError;
       this.snackBarService.openSnackBar(this.responseMessage, GlobalConstants.error);

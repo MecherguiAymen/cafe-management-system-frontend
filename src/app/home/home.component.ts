@@ -10,7 +10,9 @@ import { ForgotPasswordComponent } from '../forgot-password/forgot-password.comp
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private dialog:MatDialog,private modalService: ModalService) { }
+  constructor(
+    //private dialog:MatDialog,
+    private modalService: ModalService) { }
 
   ngOnInit(): void {
   }
@@ -19,7 +21,6 @@ export class HomeComponent implements OnInit {
     //const dialogConfig = new MatDialogConfig();
     //dialogConfig.width = "550px";
     //this.dialog.open(SignupComponent,dialogConfig);
-
     this.modalService.open(SignupComponent, {
       animations: {
         modal: {
@@ -61,5 +62,6 @@ export class HomeComponent implements OnInit {
       },
     });
   }
+
 
 }

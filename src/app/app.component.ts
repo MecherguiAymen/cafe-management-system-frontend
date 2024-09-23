@@ -49,6 +49,7 @@ export class AppComponent {
       },
       size: {
         width: '40rem',
+        padding: '100px',
       },
     });
   }

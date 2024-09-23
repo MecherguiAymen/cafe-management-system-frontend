@@ -6,6 +6,7 @@ import { SnackbarService } from '../services/snackbar.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { GlobalConstants } from '../shared/global-constants';
+import { ModalService } from '../modal/modal.service';
 export interface user {
   name: string;
   email: string;
@@ -34,8 +35,9 @@ export class SignupComponent implements OnInit {
     private router:Router,
     private userService:UserService,
     private snackBarService:SnackbarService,
-    public dialogRef:MatDialogRef<SignupComponent>,
-    private ngxService:NgxUiLoaderService
+   // public dialogRef:MatDialogRef<SignupComponent>,
+    private ngxService:NgxUiLoaderService,
+    private modalService: ModalService
   ) { }
 
   ngOnInit(): void {
@@ -81,16 +83,22 @@ export class SignupComponent implements OnInit {
     this.userService.signUp(this.user).subscribe((response: any) => {
 
       this.ngxService.stop();
-      this.dialogRef.close();
+     // this.dialogRef.close();
+     this.modalService.close();
       this.responseMessage = response.message;
       this.snackBarService.openSnackBar(this.responseMessage, "");
       this.router.navigate(['/']);
     }, (error) => {
       this.ngxService.stop();
+      this.modalService.close();
+
       error.error?.message ? this.responseMessage = error.error?.message : this.responseMessage = GlobalConstants.genericError;
       this.snackBarService.openSnackBar(this.responseMessage, GlobalConstants.error);
 
     })
+    }
+    closeModal(){
+      this.modalService.close();
     }
 
 }

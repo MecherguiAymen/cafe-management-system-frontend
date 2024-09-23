@@ -16,5 +16,8 @@ export interface Options {
     minHeight?: string;
     height?: string;
     maxHeight?: string;
+    padding?: string;
+    zIndex?: string;
+
   };
 }

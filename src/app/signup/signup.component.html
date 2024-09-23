@@ -2,7 +2,7 @@
     <mat-toolbar-row fxLaout="row">
       <span>Sign Up</span>
       <span class="spacer"></span>
-      <button class="mat-dialog-close" mat-icon-button mat-dialog-close>
+      <button class="mat-dialog-close" mat-icon-button (click)="closeModal()">
           <mat-icon>close</mat-icon>
       </button>
     </mat-toolbar-row>
@@ -72,5 +72,5 @@
       <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()" [disabled]="validateSubmit() || !(signUpForm.valid && signUpForm.dirty)">
        <mat-icon>save</mat-icon> Sign Up    
       </button>
-      <button mat-raised-button color="warn" mat-dialog-close><mat-icon>cancel</mat-icon>Close</button>
+      <button mat-raised-button color="warn" (click)="closeModal()"><mat-icon>cancel</mat-icon>Close</button>
   </mat-dialog-actions>

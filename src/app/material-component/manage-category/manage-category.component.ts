@@ -76,6 +76,7 @@ export class ManageCategoryComponent implements OnInit {
      dialogRef.close();
     })
     const sub = dialogRef.componentInstance.onAddCategory.subscribe((response)=>{
+      console.log("response",response);
      this.tableData();
     })
   }

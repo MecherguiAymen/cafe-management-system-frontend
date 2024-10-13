@@ -33,7 +33,7 @@ private snackBarSrvice:SnackbarService) { }
     if(this.dialogData.action === 'Edit'){
       this.dialogAction  = "Edit";
       this.action = "Update";
-      this.categoryForm.name.patchValue(this.dialogData.data);
+      this.categoryForm.patchValue(this.dialogData.data);
     } 
   }
   handleSubmit(){

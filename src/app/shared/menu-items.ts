@@ -11,7 +11,9 @@ const MENUITEMS = [
     {state: 'dashboard',name: 'Dashboard',type: 'link',icon:'dashboard',role:''},
     {state: 'category',name: 'Manage Category',type: 'link',icon:'category',role:'admin'},
     {state: 'product',name: 'Manage Product',type: 'link',icon:'inventory',role:'admin'},
-    {state: 'order',name: 'Manage Order',type: 'link',icon:'shopping_cart',role:''}
+    {state: 'order',name: 'Manage Order',type: 'link',icon:'shopping_cart',role:''},
+    {state: 'bill',name: 'Viw Bill',type: 'link',icon:'backup_table',role:''}
+
 
 
     

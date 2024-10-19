@@ -48,7 +48,7 @@ export class ManageProductComponent implements OnInit {
 
   applyFilter(event:Event){
     const filterValue= (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   handleAddAction(){
     const dialogConfig=new MatDialogConfig();

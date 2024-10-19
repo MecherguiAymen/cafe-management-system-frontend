@@ -49,7 +49,7 @@ export class ViewBillComponent implements OnInit {
 
   applyFilter(event:Event){
     const filterValue=(event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLocaleLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   handleViewAction(values:any){
     const dialogConfig =new MatDialogConfig();
